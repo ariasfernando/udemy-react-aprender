@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Title from './components/Title';
+
 function Hello ( props ) {
   return <h2>{ props.title }</h2>
 }
@@ -30,10 +32,8 @@ class Text extends Component {
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Hello title="Hello from props" />
-      </header>
+      <Hello title="Hello from props" />
+      <Title />
       <Text 
         arrayOfNumbers={[2,3,10]}
         objectWithInfo={{ key: 'value', key2: 'otherValue' }}
