@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Title from './components/Title';
+import Contador from './components/Contador';
+import ConditionalSection from './sections/conditional';
+import LoginButton from './sections/loginButton';
 
 function Hello ( props ) {
   return <h2>{ props.title }</h2>
@@ -15,6 +17,7 @@ class Text extends Component {
 
     const textoSegunBool = this.props.boolean ? 'Es cierto!' : 'Falso';
     const mappedNumbers = arrayOfNumbers.map(multiply);
+
 
     return (
       <div>
@@ -34,6 +37,7 @@ function App() {
     <div className="App">
       <Hello title="Hello from props" />
       <Title />
+      <Contador />
       <Text 
         arrayOfNumbers={[2,3,10]}
         objectWithInfo={{ key: 'value', key2: 'otherValue' }}
@@ -42,6 +46,8 @@ function App() {
         number={2}
         boolean={false}
         title={<h1>Este es el título</h1>} />
+      <ConditionalSection />
+      <LoginButton />
     </div>
   );
 }
