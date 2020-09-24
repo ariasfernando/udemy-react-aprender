@@ -2,43 +2,28 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Title from './components/Title';
+import Text from './components/Text';
 import Contador from './components/Contador';
 import ConditionalSection from './sections/conditional';
 import LoginButton from './sections/loginButton';
 
 function Hello ( props ) {
-  return <h2>{ props.title }</h2>
-}
-
-class Text extends Component {
-  render() {
-
-    const { arrayOfNumbers, multiply, objectWithInfo, title } = this.props;
-
-    const textoSegunBool = this.props.boolean ? 'Es cierto!' : 'Falso';
-    const mappedNumbers = arrayOfNumbers.map(multiply);
-
-
-    return (
-      <div>
-        {title}
-        <p>{this.props.text}</p>
-        <p>{this.props.number}</p>
-        <p>{textoSegunBool}</p>
-        <p>{ mappedNumbers.join(', ') }</p>
-        <p>{ objectWithInfo.key }</p>
-      </div>
-    )
-  }
+  return <h3>{ props.title }</h3>
 }
 
 function App() {
   return (
     <div className="App">
-      <Hello title="Hello from props" />
-      <Title />
-      <Contador />
-      <Text 
+
+      <section>
+        <h2>Componentes básicos</h2>
+        <Title />
+        <Hello title="Hello from props" />
+      </section>
+
+      <section>
+        <h2>Props</h2>
+        <Text 
         arrayOfNumbers={[2,3,10]}
         objectWithInfo={{ key: 'value', key2: 'otherValue' }}
         text="Texto en string"
@@ -46,8 +31,19 @@ function App() {
         number={2}
         boolean={false}
         title={<h1>Este es el título</h1>} />
-      <ConditionalSection />
-      <LoginButton />
+      </section>
+
+      <section>
+        <h2>Estado</h2>
+        <Contador />
+      </section>
+
+      <section>
+        <h2>Rendering Condicional</h2>
+        <ConditionalSection />
+        <LoginButton />
+      </section>
+
     </div>
   );
 }
